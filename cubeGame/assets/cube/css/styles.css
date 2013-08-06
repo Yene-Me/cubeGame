@@ -1,0 +1,111 @@
+/**
+ * css 3d animation, how? (SO)
+ * http://stackoverflow.com/q/9812196/1397351
+ */
+body { perspective: 50em; }
+.cube {
+	position: relative;
+	margin: 1em auto 0; /* centering */
+	padding: 0; /* reset unordered list default */
+	width: 16em; height: 16em; /* change block element default */
+	list-style: none; /* reset unordered list default */
+	/* when not animating, add slash at end to see rotated cube */
+	
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	/* remove slash at the end to stop animation */
+	-moz-animation: ani 10s infinite linear; /**/
+	-webkit-animation: ani 10s infinite linear; /**/
+	
+	-moz-backface-visibility: hidden;
+}
+@-moz-keyframes ani { 
+	to { -moz-transform: rotateY(360deg) rotateX(360deg) rotateZ(0deg); }
+}
+
+@-webkit-keyframes ani { 
+	to { -webkit-transform: rotateY(360deg) rotateX(360deg) rotateZ(0deg); }
+}
+
+.face {
+  
+   
+    border: 1px solid #336699;
+    height: 8em;
+    left: 50%;
+    margin: -8em;
+    outline: 1px solid;
+    position: absolute;
+    top: 50%;
+    width: 8em;
+    background: #a7c7dc; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E3YzdkYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4NWIyZDMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, #a7c7dc 0%, #85b2d3 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7c7dc), color-stop(100%,#85b2d3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%); /* IE10+ */
+background: linear-gradient(to bottom, #a7c7dc 0%,#85b2d3 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-8 */
+   
+
+}
+
+.number {
+    color: #0B0B33;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px #EFEFEF;
+}
+.face:nth-child(1) { 
+transform: rotateY(180deg) translateZ(4em);
+-moz-transform:rotateY(180deg) translateZ(4em);
+-webkit-transform:rotateY(180deg) translateZ(4em);
+
+ }
+
+.face:nth-child(2) { 
+transform: rotateY(180deg) translateZ(-4em);
+-moz-transform: rotateY(180deg) translateZ(-4em);
+-webkit-transform: rotateY(180deg) translateZ(-4em);
+
+}
+
+.face:nth-child(3) { 
+transform: rotateX(90deg) translateZ(4em);
+-moz-transform: rotateX(90deg) translateZ(4em);
+-webkit-transform: rotateX(90deg) translateZ(4em);
+
+
+ }
+ 
+ .face:nth-child(4) { 
+ transform: rotateX(-90deg) translateZ(4em);
+ -moz-transform: rotateX(-90deg) translateZ(4em);
+ -webkit-transform: rotateX(-90deg) translateZ(4em);
+
+ }
+ 
+ .face:nth-child(5) { 
+ transform: rotateY(90deg) translateZ(4em);
+ -moz-transform: rotateY(90deg) translateZ(4em);
+  -webkit-transform: rotateY(90deg) translateZ(4em);
+
+
+ }
+ 
+ .face:nth-child(6) { 
+ transform: rotateY(-90deg) translateZ(4em);
+  -moz-transform: rotateY(-90deg) translateZ(4em);
+  -webkit-transform: rotateY(-90deg) translateZ(4em);
+
+ }
+
+
+
+
+
